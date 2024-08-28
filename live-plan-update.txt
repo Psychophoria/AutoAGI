@@ -10,7 +10,8 @@ Plan:
 6. Ensure all changes are committed and pushed to the repository.
 
 Current Task:
-- Integrated the Ollama model with all logic systems in autoagi.py.
+- Added remaining GUI elements to gui.py.
 
 Next Task:
-- Implement the GUI elements as described in the instructions.
+- Test the GUI to ensure all elements are functioning correctly.
+- Integrate the GUI with the logic systems and tools.
