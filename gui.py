@@ -82,9 +82,31 @@ class AutoAGIApp:
         self.estimated_time_label = tk.Label(root, text="Estimated Time to Completion: 0h 0m", font=("Helvetica", 12), fg="cyan", bg="gray20")
         self.estimated_time_label.pack(pady=5)
         
-        # Placeholder for other sections
-        placeholder_label = tk.Label(root, text="Other sections to be implemented...", font=("Helvetica", 12), fg="purple", bg="gray20")
-        placeholder_label.pack(pady=20)
+        # Finalized Output Section
+        finalized_output_label = tk.Label(root, text="FINALIZED OUTPUT", font=("Helvetica", 12), fg="purple", bg="gray20")
+        finalized_output_label.pack(pady=5)
+        self.finalized_output_text = tk.Text(root, height=10, width=50, bg="gray30", fg="cyan", insertbackground="cyan")
+        self.finalized_output_text.pack(pady=5)
+        
+        # Tasks Panel
+        tasks_label = tk.Label(root, text="TASKS", font=("Helvetica", 12), fg="purple", bg="gray20")
+        tasks_label.pack(pady=5)
+        self.tasks_listbox = tk.Listbox(root, height=10, width=50, bg="gray30", fg="cyan")
+        self.tasks_listbox.pack(pady=5)
+        
+        # Files Panel
+        files_label = tk.Label(root, text="FILES", font=("Helvetica", 12), fg="purple", bg="gray20")
+        files_label.pack(pady=5)
+        self.files_listbox = tk.Listbox(root, height=10, width=50, bg="gray30", fg="cyan")
+        self.files_listbox.pack(pady=5)
+        
+        # Progress Bar
+        progress_label = tk.Label(root, text="PROGRESS", font=("Helvetica", 12), fg="purple", bg="gray20")
+        progress_label.pack(pady=5)
+        self.progress_bar = ttk.Progressbar(root, orient="horizontal", length=400, mode="determinate")
+        self.progress_bar.pack(pady=5)
+        self.estimated_time_label = tk.Label(root, text="Estimated Time to Completion: 0h 0m", font=("Helvetica", 12), fg="cyan", bg="gray20")
+        self.estimated_time_label.pack(pady=5)
 
     def select_workspace(self):
         self.workspace_path = filedialog.askdirectory()

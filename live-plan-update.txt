@@ -24,3 +24,4 @@ Progress:
 - Reviewed all existing files in the repository.
 - Updated `autoagi.py` to integrate the Ollama model with the logic systems and tools.
 - Fixed redundant lines and undefined variable in `autoagi.py`.
+- Implemented GUI elements in `gui.py`.
