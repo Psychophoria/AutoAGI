@@ -23,12 +23,14 @@ class AutoAGIApp:
         self.user_request_label.pack(pady=5)
         self.user_request_entry = tk.Entry(root, width=50, bg="gray30", fg="cyan")
         self.user_request_entry.pack(pady=5)
-        
+
         # Model Selection
         self.model_selection_label = tk.Label(root, text="MODEL SELECTION", font=("Helvetica", 12), fg="purple", bg="gray20")
         self.model_selection_label.pack(pady=5)
         self.model_selection_combobox = ttk.Combobox(root, values=["Model 1", "Model 2"], state="readonly")
         self.model_selection_combobox.pack(pady=5)
+
+
 
         # Tools
         self.tools_label = tk.Label(root, text="TOOLS", font=("Helvetica", 12), fg="purple", bg="gray20")
