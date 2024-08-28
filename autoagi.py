@@ -28,6 +28,11 @@ def task_generation_logic_system(plan):
     ]
     return tasks
 
+def task_execution_logic_system(tasks):
+    # This function will execute the tasks
+    for task in tasks:
+        print(f"Executing: {task}")
+
 def main():
     prompt = input("Enter your prompt: ")
     methods = brainstorming_logic_system(prompt)
@@ -41,6 +46,7 @@ def main():
     print("Generated Tasks:")
     for task in tasks:
         print(task)
+    task_execution_logic_system(tasks)
 
 if __name__ == "__main__":
     main()
