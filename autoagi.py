@@ -44,9 +44,23 @@ def task_loop_logic_system(prompt):
     if more_tasks_needed:
         task_loop_logic_system(prompt)
 
+def task_finalization_logic_system(prompt):
+    # This function will finalize the tasks and generate a report
+    methods = brainstorming_logic_system(prompt)
+    best_plan = planning_logic_system(methods)
+    tasks = task_generation_logic_system(best_plan)
+    task_execution_logic_system(tasks)
+    # Generate final report
+    final_report = f"Final Report for prompt: {prompt}\n"
+    final_report += "Methods:\n" + "\n".join(methods) + "\n"
+    final_report += "Best Plan:\n" + best_plan + "\n"
+    final_report += "Tasks:\n" + "\n".join(tasks) + "\n"
+    return final_report
+
 def main():
     prompt = input("Enter your prompt: ")
-    task_loop_logic_system(prompt)
+    final_report = task_finalization_logic_system(prompt)
+    print(final_report)
 
 if __name__ == "__main__":
     main()
