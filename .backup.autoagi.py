@@ -34,17 +34,6 @@ def task_execution_logic_system(tasks):
     # This function will execute the tasks
     for task in tasks:
         print(f"Executing: {task}")
-        if "code" in task.lower():
-            code_execution_tool("print('Executing code')")
-        elif "save" in task.lower():
-            file_save_tool("workspace/example.txt", "Example content")
-        elif "load" in task.lower():
-            content = file_load_tool("workspace/example.txt")
-            print(f"Loaded content: {content}")
-        elif "generate tool" in task.lower():
-            tool_generation_tool("example_tool", "def example_tool():\n    pass")
-        elif "browse" in task.lower():
-            internet_browsing_tool("https://example.com", ["wait_for_selector('h1')"])
 
 def task_loop_logic_system(prompt):
     # This function will loop through tasks until the prompt is fully addressed
