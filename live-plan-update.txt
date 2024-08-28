@@ -3,14 +3,14 @@ BLACKBOX-CODER-6114423
 
 Plan:
 1. Review all existing files in the repository.
-2. Understand the current state of the project.
+2. Understand the current state and functionality of the program.
 3. Integrate the Ollama model with the logic systems and tools.
 4. Implement the GUI elements as described in the instructions.
-5. Continuously update the `live-plan-update.txt` file with progress.
+5. Continuously update the `live-plan-update.txt` file with progress and plans.
 6. Ensure all changes are committed and pushed to the repository.
 
 Current Task:
-- Reviewing the existing files and understanding the current state of the project.
+- Reviewing existing files and understanding the current state of the program.
 
 Next Task:
 - Integrate the Ollama model with the logic systems and tools.
