@@ -3,36 +3,31 @@ import tkinter as tk
 from tkinter import ttk, filedialog
 import os
 
-# AutoAGIApp: Main class to create the GUI for the AutoAGI program
-# This class sets up the GUI elements and their functionalities
-
 class AutoAGIApp:
     def __init__(self, root):
         self.root = root
         self.root.title("AutoAGI - Autonomous AI System")
         self.root.configure(bg='gray20')
         
-        # Set up the title of the GUI
-
         # Title
         title = tk.Label(root, text="AutoAGI - Autonomous AI System", font=("Helvetica", 16), fg="cyan", bg="gray20")
         title.pack(pady=10)
-
-        # Set up the user request input section
-
-        # Set up the model selection section
-
-        # Set up the tools section
-
-        # Set up the workspace selection section
-
-        # Set up the AI controls section
-
-        # Set up the output terminal section
-
-        # Set up the finalized output section
-
-        # Set up the progress bar section
+        
+        # User Request
+        user_request_label = tk.Label(root, text="USER REQUEST", font=("Helvetica", 12), fg="purple", bg="gray20")
+        user_request_label.pack(pady=5)
+        self.user_request_text = tk.Text(root, height=5, width=50, bg="gray30", fg="cyan", insertbackground="cyan")
+        self.user_request_text.pack(pady=5)
+        
+        # Model Selection
+        model_selection_label = tk.Label(root, text="MODEL SELECTION", font=("Helvetica", 12), fg="purple", bg="gray20")
+        model_selection_label.pack(pady=5)
+        self.model_selection = ttk.Combobox(root, values=["Model 1", "Model 2"], state="readonly")
+        self.model_selection.pack(pady=5)
+        
+        # Placeholder for other sections
+        placeholder_label = tk.Label(root, text="Other sections to be implemented...", font=("Helvetica", 12), fg="purple", bg="gray20")
+        placeholder_label.pack(pady=20)
 
     def select_workspace(self):
         self.workspace_path = filedialog.askdirectory()
