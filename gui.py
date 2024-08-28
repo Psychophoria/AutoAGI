@@ -25,6 +25,31 @@ class AutoAGIApp:
         self.model_selection = ttk.Combobox(root, values=["Model 1", "Model 2"], state="readonly")
         self.model_selection.pack(pady=5)
         
+        # Tools Section
+        tools_label = tk.Label(root, text="TOOLS", font=("Helvetica", 12), fg="purple", bg="gray20")
+        tools_label.pack(pady=5)
+        self.autonomous_tool_var = tk.BooleanVar()
+        self.autonomous_tool_check = tk.Checkbutton(root, text="Autonomous Tool Generation", variable=self.autonomous_tool_var, bg="gray20", fg="cyan", selectcolor="gray30")
+        self.autonomous_tool_check.pack(pady=5)
+        
+        # Workspace Section
+        workspace_label = tk.Label(root, text="WORKSPACE", font=("Helvetica", 12), fg="purple", bg="gray20")
+        workspace_label.pack(pady=5)
+        self.workspace_button = tk.Button(root, text="Select Workspace", command=self.select_workspace, bg="gray30", fg="cyan")
+        self.workspace_button.pack(pady=5)
+        
+        # AI Controls Section
+        controls_label = tk.Label(root, text="AI CONTROLS", font=("Helvetica", 12), fg="purple", bg="gray20")
+        controls_label.pack(pady=5)
+        self.start_button = tk.Button(root, text="START", command=self.start_ai, bg="green", fg="white")
+        self.start_button.pack(side=tk.LEFT, padx=5, pady=5)
+        self.stop_button = tk.Button(root, text="STOP", command=self.stop_ai, bg="red", fg="white")
+        self.stop_button.pack(side=tk.LEFT, padx=5, pady=5)
+        self.pause_button = tk.Button(root, text="PAUSE", command=self.pause_ai, bg="yellow", fg="black")
+        self.pause_button.pack(side=tk.LEFT, padx=5, pady=5)
+        self.reset_button = tk.Button(root, text="RESET", command=self.reset_ai, bg="blue", fg="white")
+        self.reset_button.pack(side=tk.LEFT, padx=5, pady=5)
+        
         # Placeholder for other sections
         placeholder_label = tk.Label(root, text="Other sections to be implemented...", font=("Helvetica", 12), fg="purple", bg="gray20")
         placeholder_label.pack(pady=20)
