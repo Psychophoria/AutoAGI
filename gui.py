@@ -74,6 +74,14 @@ class AutoAGIApp:
         self.files_listbox = tk.Listbox(root, height=10, width=50, bg="gray30", fg="cyan")
         self.files_listbox.pack(pady=5)
         
+        # Progress Bar
+        progress_label = tk.Label(root, text="PROGRESS", font=("Helvetica", 12), fg="purple", bg="gray20")
+        progress_label.pack(pady=5)
+        self.progress_bar = ttk.Progressbar(root, orient="horizontal", length=400, mode="determinate")
+        self.progress_bar.pack(pady=5)
+        self.estimated_time_label = tk.Label(root, text="Estimated Time to Completion: 0h 0m", font=("Helvetica", 12), fg="cyan", bg="gray20")
+        self.estimated_time_label.pack(pady=5)
+        
         # Placeholder for other sections
         placeholder_label = tk.Label(root, text="Other sections to be implemented...", font=("Helvetica", 12), fg="purple", bg="gray20")
         placeholder_label.pack(pady=20)
