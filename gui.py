@@ -50,6 +50,18 @@ class AutoAGIApp:
         self.reset_button = tk.Button(root, text="RESET", command=self.reset_ai, bg="blue", fg="white")
         self.reset_button.pack(side=tk.LEFT, padx=5, pady=5)
         
+        # Output Terminal Section
+        output_terminal_label = tk.Label(root, text="OUTPUT TERMINAL", font=("Helvetica", 12), fg="purple", bg="gray20")
+        output_terminal_label.pack(pady=5)
+        self.output_terminal_text = tk.Text(root, height=10, width=50, bg="gray30", fg="cyan", insertbackground="cyan")
+        self.output_terminal_text.pack(pady=5)
+        
+        # Finalized Output Section
+        finalized_output_label = tk.Label(root, text="FINALIZED OUTPUT", font=("Helvetica", 12), fg="purple", bg="gray20")
+        finalized_output_label.pack(pady=5)
+        self.finalized_output_text = tk.Text(root, height=10, width=50, bg="gray30", fg="cyan", insertbackground="cyan")
+        self.finalized_output_text.pack(pady=5)
+        
         # Placeholder for other sections
         placeholder_label = tk.Label(root, text="Other sections to be implemented...", font=("Helvetica", 12), fg="purple", bg="gray20")
         placeholder_label.pack(pady=20)
@@ -65,10 +77,10 @@ class AutoAGIApp:
         self.output_terminal_text.insert(tk.END, "AI stopped.\n")
 
     def pause_ai(self):
-        self.output_terminal_text.insert(tk.END, "AI paused.\n")
+        self.output_terminal_text.insert(tk.END, "AI paused...\n")
 
     def reset_ai(self):
-        self.output_terminal_text.insert(tk.END, "AI reset.\n")
+        self.output_terminal_text.insert(tk.END, "AI reset...\n")
 
 if __name__ == "__main__":
     root = tk.Tk()
