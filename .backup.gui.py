@@ -109,6 +109,9 @@ class AutoAGIApp:
         self.estimated_time_label.pack(pady=5)
 
     def select_workspace(self):
+        """
+        Function to select the workspace directory.
+        """
         self.workspace_path = filedialog.askdirectory()
         self.output_terminal_text.insert(tk.END, f"Workspace selected: {self.workspace_path}\n")
 

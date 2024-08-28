@@ -27,6 +27,10 @@ def planning_logic_system(methods):
     """
     This function will review all methods and determine the best plan.
     It uses the Ollama model to select the best plan.
+    Args:
+    methods (list): A list of methods to solve the prompt.
+    Returns:
+    dict: The best plan to solve the prompt.
     """
     # Initialize the Ollama model
     ollama_model = OllamaModel()
@@ -40,6 +44,10 @@ def task_generation_logic_system(plan):
     """
     This function will break down the plan into detailed tasks.
     It uses the Ollama model to generate tasks.
+    Args:
+    plan (dict): The best plan to solve the prompt.
+    Returns:
+    list: A list of detailed tasks to execute the plan.
     """
     # Initialize the Ollama model
     ollama_model = OllamaModel()
@@ -53,6 +61,8 @@ def task_execution_logic_system(tasks):
     """
     This function will execute the tasks.
     It uses the Ollama model and various tools to execute tasks.
+    Args:
+    tasks (list): A list of detailed tasks to execute the plan.
     """
     # Initialize the Ollama model
     ollama_model = OllamaModel()
@@ -77,6 +87,8 @@ def task_loop_logic_system(prompt):
     """
     This function will loop through tasks until the prompt is fully addressed.
     It uses the Ollama model to check if more tasks are needed.
+    Args:
+    prompt (str): The user's prompt or request.
     """
     # Initialize the Ollama model
     ollama_model = OllamaModel()
@@ -99,20 +111,24 @@ def task_loop_logic_system(prompt):
     if more_tasks_needed:
         task_loop_logic_system(prompt)
 
-def task_finalization_logic_system(prompt):
-
+def task_finalization_logic_system():
     """
     This function will finalize the tasks and generate a report.
     It uses the Ollama model to generate the final report.
+    Returns:
+    str: The final report.
     """
     # Initialize the Ollama model
     ollama_model = OllamaModel()
     
     # Generate the final report using the Ollama model
-    final_report = ollama_model.generate_final_report(prompt)
+    final_report = ollama_model.generate_final_report()
     
     return final_report
 
 if __name__ == "__main__":
-    prompt = "Your prompt here"
-    task_loop_logic_system(prompt)
+    # Example usage
+    user_prompt = "Build a website"
+    task_loop_logic_system(user_prompt)
+    final_report = task_finalization_logic_system()
+    print(final_report)
