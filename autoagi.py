@@ -47,7 +47,7 @@ def task_generation_logic_system(plan):
     Args:
     plan (dict): The best plan to solve the prompt.
     Returns:
-    list: A list of tasks to execute the plan.
+    list: A list of detailed tasks to execute the plan.
     """
     # Initialize the Ollama model
     ollama_model = OllamaModel()
@@ -62,7 +62,7 @@ def task_execution_logic_system(tasks):
     This function will execute the tasks.
     It uses the Ollama model and various tools to execute tasks.
     Args:
-    tasks (list): A list of tasks to execute the plan.
+    tasks (list): A list of detailed tasks to execute the plan.
     """
     # Initialize the Ollama model
     ollama_model = OllamaModel()

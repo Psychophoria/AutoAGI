@@ -10,6 +10,10 @@ def brainstorming_logic_system(prompt):
     """
     This function will brainstorm multiple methods to solve the user's prompt.
     It uses the Ollama model to generate methods.
+    Args:
+    prompt (str): The user's prompt or request.
+    Returns:
+    list: A list of methods to solve the prompt.
     """
     # Initialize the Ollama model
     ollama_model = OllamaModel()
