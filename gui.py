@@ -14,12 +14,16 @@ class AutoAGIApp:
         self.root.title("AutoAGI - Autonomous AI System")
         self.root.configure(bg="gray20")
 
+        # Title
+        self.title_label = tk.Label(root, text="AutoAGI - Autonomous AI System", font=("Helvetica", 16), fg="cyan", bg="gray20")
+        self.title_label.pack(pady=10)
+
         # User Request
         self.user_request_label = tk.Label(root, text="USER REQUEST", font=("Helvetica", 12), fg="purple", bg="gray20")
         self.user_request_label.pack(pady=5)
         self.user_request_entry = tk.Entry(root, width=50, bg="gray30", fg="cyan")
         self.user_request_entry.pack(pady=5)
-
+        
         # Model Selection
         self.model_selection_label = tk.Label(root, text="MODEL SELECTION", font=("Helvetica", 12), fg="purple", bg="gray20")
         self.model_selection_label.pack(pady=5)
