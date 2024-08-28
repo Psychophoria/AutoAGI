@@ -96,6 +96,7 @@ def task_loop_logic_system(prompt):
         task_loop_logic_system(prompt)
 
 def task_finalization_logic_system(prompt):
+
     """
     This function will finalize the tasks and generate a report.
     It uses the Ollama model to generate the final report.
