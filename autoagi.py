@@ -33,20 +33,20 @@ def task_execution_logic_system(tasks):
     for task in tasks:
         print(f"Executing: {task}")
 
+def task_loop_logic_system(prompt):
+    # This function will loop through tasks until the prompt is fully addressed
+    methods = brainstorming_logic_system(prompt)
+    best_plan = planning_logic_system(methods)
+    tasks = task_generation_logic_system(best_plan)
+    task_execution_logic_system(tasks)
+    # Check if more tasks are needed
+    more_tasks_needed = False  # Placeholder for actual logic
+    if more_tasks_needed:
+        task_loop_logic_system(prompt)
+
 def main():
     prompt = input("Enter your prompt: ")
-    methods = brainstorming_logic_system(prompt)
-    print("Brainstormed Methods:")
-    for method in methods:
-        print(method)
-    best_plan = planning_logic_system(methods)
-    print("Best Plan:")
-    print(best_plan)
-    tasks = task_generation_logic_system(best_plan)
-    print("Generated Tasks:")
-    for task in tasks:
-        print(task)
-    task_execution_logic_system(tasks)
+    task_loop_logic_system(prompt)
 
 if __name__ == "__main__":
     main()
