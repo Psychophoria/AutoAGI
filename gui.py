@@ -62,6 +62,18 @@ class AutoAGIApp:
         self.finalized_output_text = tk.Text(root, height=10, width=50, bg="gray30", fg="cyan", insertbackground="cyan")
         self.finalized_output_text.pack(pady=5)
         
+        # Tasks Panel
+        tasks_label = tk.Label(root, text="TASKS", font=("Helvetica", 12), fg="purple", bg="gray20")
+        tasks_label.pack(pady=5)
+        self.tasks_listbox = tk.Listbox(root, height=10, width=50, bg="gray30", fg="cyan")
+        self.tasks_listbox.pack(pady=5)
+        
+        # Files Panel
+        files_label = tk.Label(root, text="FILES", font=("Helvetica", 12), fg="purple", bg="gray20")
+        files_label.pack(pady=5)
+        self.files_listbox = tk.Listbox(root, height=10, width=50, bg="gray30", fg="cyan")
+        self.files_listbox.pack(pady=5)
+        
         # Placeholder for other sections
         placeholder_label = tk.Label(root, text="Other sections to be implemented...", font=("Helvetica", 12), fg="purple", bg="gray20")
         placeholder_label.pack(pady=20)
@@ -74,7 +86,7 @@ class AutoAGIApp:
         self.output_terminal_text.insert(tk.END, "AI started...\n")
 
     def stop_ai(self):
-        self.output_terminal_text.insert(tk.END, "AI stopped.\n")
+        self.output_terminal_text.insert(tk.END, "AI stopped...\n")
 
     def pause_ai(self):
         self.output_terminal_text.insert(tk.END, "AI paused...\n")
