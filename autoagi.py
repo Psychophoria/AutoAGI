@@ -16,8 +16,7 @@ def brainstorming_logic_system(prompt):
     list: A list of methods to solve the prompt.
     """
     # Initialize the Ollama model
-    ollama_model = OllamaModel()
-    
+    ollama_model = OllamaModel(model_name="selected_model")
     # Generate methods using the Ollama model
     methods = ollama_model.generate_methods(prompt)
     
@@ -33,8 +32,7 @@ def planning_logic_system(methods):
     dict: The best plan to solve the prompt.
     """
     # Initialize the Ollama model
-    ollama_model = OllamaModel()
-    
+    ollama_model = OllamaModel(model_name="selected_model")
     # Select the best plan using the Ollama model
     best_plan = ollama_model.select_best_plan(methods)
     
@@ -50,8 +48,7 @@ def task_generation_logic_system(plan):
     list: A list of detailed tasks to execute the plan.
     """
     # Initialize the Ollama model
-    ollama_model = OllamaModel()
-    
+    ollama_model = OllamaModel(model_name="selected_model")
     # Generate tasks using the Ollama model
     tasks = ollama_model.generate_tasks(plan)
     
@@ -65,8 +62,7 @@ def task_execution_logic_system(tasks):
     tasks (list): A list of detailed tasks to execute the plan.
     """
     # Initialize the Ollama model
-    ollama_model = OllamaModel()
-    
+    ollama_model = OllamaModel(model_name="selected_model")
     # Execute each task using the Ollama model and appropriate tools
     for task in tasks:
         ollama_model.execute_task(task)
@@ -91,8 +87,7 @@ def task_loop_logic_system(prompt):
     prompt (str): The user's prompt or request.
     """
     # Initialize the Ollama model
-    ollama_model = OllamaModel()
-    
+    ollama_model = OllamaModel(model_name="selected_model")
     # Generate methods using the brainstorming logic system
     methods = brainstorming_logic_system(prompt)
     
@@ -121,8 +116,7 @@ def task_finalization_logic_system(prompt):
     str: The final report.
     """
     # Initialize the Ollama model
-    ollama_model = OllamaModel()
-    
+    ollama_model = OllamaModel(model_name="selected_model")
     # Generate the final report using the Ollama model
     final_report = ollama_model.generate_final_report(prompt)
     
