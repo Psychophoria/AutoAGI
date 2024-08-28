@@ -1,1 +1,15 @@
 
+<<<<<<< HEAD
+=======
+# requirements.txt
+# Lists all the dependencies required for the project
+
+>>>>>>> acb41be17feeb4f05933e8a2483d96b8c74b1bb7
+flask
+fastapi
+uvicorn
+ollama
+<<<<<<< HEAD
+crawlee
+=======
+>>>>>>> acb41be17feeb4f05933e8a2483d96b8c74b1bb7

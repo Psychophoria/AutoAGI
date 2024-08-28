@@ -29,3 +29,18 @@ def tool_generation(tool_name, tool_code):
     with open(__file__, "a") as file:
         file.write(f"\n\ndef {tool_name}():\n")
         file.write(f"    {tool_code}\n")
+
+def code_execution_tool():
+    pass
+
+def file_save_tool():
+    pass
+
+def file_load_tool():
+    pass
+
+def tool_generation_tool():
+    pass
+
+def internet_browsing_tool():
+    pass

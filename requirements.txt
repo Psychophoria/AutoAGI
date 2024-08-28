@@ -1,4 +1,7 @@
 
+# requirements.txt
+# Lists all the dependencies required for the project
+
 flask
 fastapi
 uvicorn

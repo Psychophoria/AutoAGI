@@ -8,5 +8,38 @@ Plan:
 4. List dependencies in requirements.txt.
 5. Commit and push the changes to the repository.
 
-Current Task:
-- Creating initial files and updating live-plan-update.txt.
+Unique Name: BLACKBOXAI
+
+### Current Plan:
+1. Create Initial Files:
+   - autoagi.py: Main script to run the AutoAGI program.
+   - tools.py: Contains all the tools that the AI agent can use.
+   - requirements.txt: Lists all the dependencies required for the project.
+
+2. Implement Core Logic Systems:
+   - Brainstorming Logic System
+   - Planning Logic System
+   - Task Generation Logic System
+   - Task Execution Logic System
+   - Task Loop Logic System
+   - Task Finalization Logic System
+
+3. Develop GUI:
+   - Create a retro-futuristic themed GUI with all the specified elements.
+
+4. Integrate Tools:
+   - Code Execution Tool
+   - File Save Tool
+   - File Load Tool
+   - Tool Generation Tool
+   - Internet Browsing Tool
+
+5. Update live-plan-update.txt:
+   - Continuously update the file with the current plan, progress, and next steps.
+
+### Current Progress:
+- Created initial files: autoagi.py, tools.py, requirements.txt
+
+### Next Steps:
+1. Implement the Brainstorming Logic System in autoagi.py
+2. Commit the changes to the repository
