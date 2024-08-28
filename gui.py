@@ -30,8 +30,6 @@ class AutoAGIApp:
         self.model_selection_combobox = ttk.Combobox(root, values=["Model 1", "Model 2"], state="readonly")
         self.model_selection_combobox.pack(pady=5)
 
-
-
         # Tools
         self.tools_label = tk.Label(root, text="TOOLS", font=("Helvetica", 12), fg="purple", bg="gray20")
         self.tools_label.pack(pady=5)
@@ -99,51 +97,50 @@ class AutoAGIApp:
         self.progress_label.pack(pady=5)
         self.progress_bar = ttk.Progressbar(root, length=400, mode="determinate")
         self.progress_bar.pack(pady=5)
-        self.estimated_time_label = tk.Label(root, text="Estimated Time to Completion: 0h 0m", font=("Helvetica", 12), fg="cyan", bg="gray20")
-        self.estimated_time_label.pack(pady=5)
 
     def select_workspace(self):
         """
-        Function to select the workspace directory.
+        Select the workspace folder.
         """
-        self.workspace_path = filedialog.askdirectory()
-        self.output_terminal_text.insert(tk.END, f"Workspace selected: {self.workspace_path}\n")
+        folder_selected = filedialog.askdirectory()
+        if folder_selected:
+            self.workspace_folder = folder_selected
 
     def start_ai(self):
         """
-        Function to start the AI agent.
+        Start the AI agent.
         """
-        self.output_terminal_text.insert(tk.END, "AI started...\n")
+        pass
 
     def stop_ai(self):
         """
-        Function to stop the AI agent.
+        Stop the AI agent.
         """
-        self.output_terminal_text.insert(tk.END, "AI stopped...\n")
+        pass
 
     def pause_ai(self):
         """
-        Function to pause the AI agent.
+        Pause the AI agent.
         """
-        self.output_terminal_text.insert(tk.END, "AI paused...\n")
+        pass
 
     def reset_ai(self):
         """
-        Function to reset the AI agent.
+        Reset the AI agent.
         """
-        self.output_terminal_text.insert(tk.END, "AI reset...\n")
+        pass
 
     def continue_session(self):
         """
-        Function to continue the current session.
+        Continue the current session.
         """
-        self.output_terminal_text.insert(tk.END, "Session continued...\n")
+        pass
 
     def reset_session(self):
         """
-        Function to reset the current session.
+        Reset the current session.
         """
-        self.output_terminal_text.insert(tk.END, "Session reset...\n")
+        pass
 
 if __name__ == "__main__":
     root = tk.Tk()
