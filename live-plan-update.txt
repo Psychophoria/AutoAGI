@@ -39,7 +39,8 @@ Unique Name: BLACKBOXAI
 
 ### Current Progress:
 - Created initial files: autoagi.py, tools.py, requirements.txt
+- Expanded the Brainstorming Logic System in autoagi.py
 
 ### Next Steps:
-1. Implement the Brainstorming Logic System in autoagi.py
+1. Integrate the Planning Logic System with the Brainstorming Logic System in autoagi.py
 2. Commit the changes to the repository

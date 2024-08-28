@@ -1,6 +1,5 @@
 
 # autoagi.py
-<<<<<<< HEAD
 # Main file for the AutoAGI program
 
 import os
@@ -13,11 +12,6 @@ app = FastAPI()
 @app.get("/", response_class=HTMLResponse)
 def index():
     return "<h1>Welcome to AutoAGI</h1>"
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
-=======
-# Main script to run the AutoAGI program
 
 def brainstorming_logic_system(prompt):
     # This function will brainstorm multiple methods to solve the user's prompt
@@ -37,5 +31,5 @@ def main():
         print(method)
 
 if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
     main()
->>>>>>> acb41be17feeb4f05933e8a2483d96b8c74b1bb7
