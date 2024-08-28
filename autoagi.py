@@ -27,6 +27,10 @@ def planning_logic_system(methods):
     """
     This function will review all methods and determine the best plan.
     It uses the Ollama model to select the best plan.
+    Args:
+    methods (list): A list of methods to solve the prompt.
+    Returns:
+    dict: The best plan to solve the prompt.
     """
     # Initialize the Ollama model
     ollama_model = OllamaModel()
@@ -40,6 +44,10 @@ def task_generation_logic_system(plan):
     """
     This function will break down the plan into detailed tasks.
     It uses the Ollama model to generate tasks.
+    Args:
+    plan (dict): The best plan to solve the prompt.
+    Returns:
+    list: A list of tasks to execute the plan.
     """
     # Initialize the Ollama model
     ollama_model = OllamaModel()
@@ -53,6 +61,8 @@ def task_execution_logic_system(tasks):
     """
     This function will execute the tasks.
     It uses the Ollama model and various tools to execute tasks.
+    Args:
+    tasks (list): A list of tasks to execute the plan.
     """
     # Initialize the Ollama model
     ollama_model = OllamaModel()
@@ -77,6 +87,8 @@ def task_loop_logic_system(prompt):
     """
     This function will loop through tasks until the prompt is fully addressed.
     It uses the Ollama model to check if more tasks are needed.
+    Args:
+    prompt (str): The user's prompt or request.
     """
     # Initialize the Ollama model
     ollama_model = OllamaModel()
@@ -100,10 +112,13 @@ def task_loop_logic_system(prompt):
         task_loop_logic_system(prompt)
 
 def task_finalization_logic_system(prompt):
-
     """
     This function will finalize the tasks and generate a report.
     It uses the Ollama model to generate the final report.
+    Args:
+    prompt (str): The user's prompt or request.
+    Returns:
+    str: The final report.
     """
     # Initialize the Ollama model
     ollama_model = OllamaModel()
