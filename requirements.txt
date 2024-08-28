@@ -1,5 +1,4 @@
 
-tkinter
 ollama
 tkinter
 crawlee
