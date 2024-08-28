@@ -96,28 +96,19 @@ def task_loop_logic_system(prompt):
         task_loop_logic_system(prompt)
 
 def task_finalization_logic_system(prompt):
+
     """
     This function will finalize the tasks and generate a report.
     It uses the Ollama model to generate the final report.
     """
-    # This function will finalize the tasks and generate a report
-    ollama_model = OllamaModel()  # Initialize the Ollama model
-    methods = brainstorming_logic_system(prompt)
-    best_plan = planning_logic_system(methods)
-    tasks = task_generation_logic_system(best_plan)
-    task_execution_logic_system(tasks)
-    # Generate final report
-    final_report = ollama_model.generate_final_report(prompt, methods, best_plan, tasks)  # Generate final report using the Ollama model
+    # Initialize the Ollama model
+    ollama_model = OllamaModel()
+    
+    # Generate the final report using the Ollama model
+    final_report = ollama_model.generate_final_report(prompt)
+    
     return final_report
 
-def main():
-    """
-    Main function to run the AutoAGI program.
-    It takes user input for the prompt and generates the final report.
-    """
-    prompt = input("Enter your prompt: ")
-    final_report = task_finalization_logic_system(prompt)
-    print(final_report)
-
 if __name__ == "__main__":
-    main()
+    prompt = "Your prompt here"
+    task_loop_logic_system(prompt)
