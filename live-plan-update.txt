@@ -12,3 +12,11 @@ Current Plan:
 
 Current Task:
 - Implementing the placeholder functions in tools.py with actual logic.
+
+Next Steps:
+1. Enhance autoagi.py to integrate with the Ollama model.
+2. Implement placeholder functions in tools.py.
+3. Create requirements.txt.
+4. Develop the GUI.
+5. Test the system.
+6. Continuously improve the program.
