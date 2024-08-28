@@ -12,12 +12,20 @@ def brainstorming_logic_system(prompt):
     ]
     return methods
 
+def planning_logic_system(methods):
+    # This function will review all methods and determine the best plan
+    best_plan = "Optimal Plan: Combine the best components of each method."
+    return best_plan
+
 def main():
     prompt = input("Enter your prompt: ")
     methods = brainstorming_logic_system(prompt)
     print("Brainstormed Methods:")
     for method in methods:
         print(method)
+    best_plan = planning_logic_system(methods)
+    print("Best Plan:")
+    print(best_plan)
 
 if __name__ == "__main__":
     main()
