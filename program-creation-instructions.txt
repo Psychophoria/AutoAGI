@@ -1,0 +1,158 @@
+
+
+**Project: AutoAGI - Advanced Autonomous Agent System**
+
+**1. High-Level Objective:**
+
+Develop "AutoAGI," a fully autonomous, continuously operating, highly intelligent AI agent system. AutoAGI leverages a user-selected Large Language Model (LLM) from various providers and integrates a dynamic suite of Augmentations, Tools, and Actions to achieve comprehensive digital task execution, autonomous self-improvement, and **persistent, ongoing operation when required (Infinity Mode).** The goal is to create a system significantly more capable and advanced than existing platforms like Manus.
+
+**2. Core AI Engine:**
+
+*   **Provider & Model:** The system's core reasoning ("brain") will be powered by an LLM provider & model selected by the user. The system must support integration with multiple providers.
+*   **Supported Providers (Initial):** Google Gemini, Groq, x.AI (Grok), OpenRouter, Ollama (for locally hosted models). The architecture should allow for adding more providers in the future.
+*   **Integration:** The selected LLM must be deeply integrated with all system components via robust function calling, specialized prompts fed to the user selected AI LLM and are associated with each individual system, function, augmentation, tool and action which are tailored to the model's capabilities, and persistent memory systems. It is critical that the AI LLM is instructed on exactly how to structure & format responses so they are compatible with the program.
+
+**3. System Architecture:**
+
+AutoAGI's architecture is built upon three interconnected concepts:
+
+*   **#1. Augmentations:** These represent cognitive enhancements, behavioral protocols, operational loops, memory management strategies, and problem-solving frameworks integrated with the selected LLM. They define *how* the agent thinks, learns, adapts, remembers, and operates autonomously. Examples include logic systems, reflection processes, adaptive planning engines, and self-correction mechanisms.
+*   **#2. Tools:** These are distinct capabilities or systems that the agent can leverage to interact with the digital environment, perform specific complex functions (e.g., browsing the web, executing code, accessing databases), or manage its own operations. Tools are the primary means by which the agent acts upon the world or its internal state.
+*   **#3. Actions:** These are the specific, granular functions or sub-capabilities provided *by* a Tool. Each Tool comprises multiple Actions that define the precise ways it can be utilized (e.g., within a "Browser" Tool, Actions might include `navigate_to_url`, `extract_structured_data`, `interact_with_form`).
+
+**4. Core Capabilities:**
+
+*   **Universal Task Execution:** AutoAGI must be capable of understanding complex user requests and attempting to accomplish virtually any digital task specified.
+*   **Autonomous Self-Improvement & Tool Creation:**
+    *   **Identification:** If AutoAGI encounters a task it cannot perform due to missing capabilities (lacking the right Tool, Action, or Augmentation), it must recognize this limitation.
+    *   **Analysis & Research:** It must analyze the gap, research potential solutions (required libraries, APIs, algorithms, approaches), and determine what new Tool or capability is needed.
+    *   **Planning & Development:** Plan the creation of the new Tool/Augmentation, generate the necessary code (potentially using a predefined template), including defining its specific Actions. The system should choose the most appropriate programming language and environment for the new tool.
+    *   **Testing & Validation:** Thoroughly test the new Tool/Augmentation and all its associated Actions within a safe, sandboxed environment to ensure functionality, correctness, and security.
+    *   **Integration & Persistence:** Upon successful validation, permanently save the new Tool/Augmentation to the system's persistent memory and tool registry, making it available for future use.
+    *   **Task Resumption:** Resume and complete the original task using the newly created capability.
+*   **Advanced Memory Systems:** Implement robust short-term (context window) and long-term memory solutions. This should include structured memory (like databases or knowledge graphs) and vector databases for semantic search and retrieval, enabling the agent to recall past interactions, learned information, and available tools effectively.
+*   **Complex Adaptive Planning:** The agent must be capable of generating detailed, multi-step plans, adapting them dynamically based on new information or unexpected outcomes, and potentially exploring multiple branches or strategies.
+*   **Resource Management:** Monitor key resources, such as API token usage (where applicable) for the selected LLM provider, to provide transparency and potentially implement usage limits or warnings.
+
+**5. Required System Components (Initial Set):**
+
+The following components must be included from the start, fully integrated with the selected LLM (via function calling, custom prompts stored in long-term memory), and accessible to the agent.
+
+*   **A. Augmentation Systems (Mandatory & Extensible):**
+    *   Analyze, brainstorm, research, plan, and generate a complex, intertwined array of advanced augmentation systems based on the concepts below. These must be integrated via function calling or internal logic.
+    *   **Required Concepts to Implement:**
+        *   **Behavior Systems:** Define operational guidelines and interaction protocols. (Note: Ensure the agent objectively attempts tasks based on user requests without pre-programmed ethical biases *preventing* analysis or action solely based on the topic, while still operating safely and legally within its execution environment).
+        *   **Logic System:** Enable advanced logical reasoning, inference, and intelligent thought processes.
+        *   **Autonomous Loop System:** Allow continuous operation without requiring constant user interaction. **This system must be aware of the "Infinity Mode" status. When Infinity Mode is active for a task, the loop should not terminate upon apparent completion of the initial prompt's interpretation but should persist based on the ongoing nature of the task (e.g., monitoring for new inputs, executing scheduled actions, maintaining a service) until explicitly stopped by the user.**
+        *   **Problem-Solving & Adaptive Planning System:** Analyze requests, generate detailed multi-step plans, evaluate/refine plans, adapt dynamically to changing circumstances, and select optimal strategies.
+        *   **Self-Awareness Analogue:** Maintain awareness of its own state, capabilities, limitations, ongoing processes, and memory contents.
+        *   **Review/Reflection System:** Continuously review actions, tool usage, and outcomes against expectations to ensure accuracy, effectiveness, and identify areas for improvement or correction.
+        *   **Self-Correction/Debugging System:** Ability to detect errors in its own reasoning, plans, or generated code/actions, and attempt to debug or correct them autonomously.
+        *   **Task & Subtask Generation System:** Decompose complex user requests into manageable tasks and subtasks; dynamically generate new tasks/subtasks as needed during execution.
+        *   **Capability Assessment System:** Before starting a task/subtask, assess its difficulty and determine if current Augmentations/Tools/Actions are sufficient, or if self-improvement (Tool Creation) or acquiring an existing tool is needed first.
+        *   **Memory Management System:** Controls the flow of information between short-term context, long-term structured memory, and long-term vector memory.
+    *   **Extensibility:** The agent should be capable of designing and integrating *additional* intertwined Augmentation systems beyond this initial list as part of its self-improvement capability.
+
+*   **B. Tool Systems (Mandatory & Extensible):**
+    *   All Tools must have accompanying metadata (description, instructions, list of Actions with parameters/examples) stored in long-term memory and be integrated via a standardized function calling mechanism compatible with the selected LLM.
+    *   **Required Tools:**
+        *   **Internet Browser Tool:**
+            *   Integrate advanced web browsing capabilities (e.g., based on libraries like Selenium, Playwright, or custom implementations).
+            *   Support complex interactions: form filling, clicking JavaScript elements, handling logins (securely, if implemented), extracting structured data, reading page text, taking screenshots (full page and element-specific).
+            *   **Required Actions (minimum):** `navigate_to_url`, `take_screenshot`, `extract_page_text`, `extract_structured_data` (e.g., using CSS selectors/XPath), `click_element`, `scroll_page`, `input_text_into_field`, `submit_form`, etc. (Should adapt behavior based on whether the AI model has vision enabled).
+        *   **Code Execution Tool:**
+            *   **Constraint:** ALL code execution MUST occur within secure, isolated sandboxed environments (e.g., Docker containers, specialized virtual environments). The system should manage these environments. Support for multiple programming languages should be inherent or achievable via environment configuration.
+            *   **Required Actions:** `create_execution_environment` (potentially specifying language/dependencies), `execute_code_in_environment`, `install_dependencies_in_environment`, `view_environment_details`, `destroy_environment`.
+        *   **Tool Creation Tool:**
+            *   Provides the structured process for autonomous self-improvement as described in Section 4.
+            *   **Required Actions (conceptual steps):** `identify_capability_gap`, `research_solutions`, `plan_new_tool`, `generate_tool_code` (language determined by system), `define_tool_actions`, `test_tool_code_sandboxed`, `test_tool_actions_sandboxed`, `save_tool_to_registry`.
+        *   **File System Tool:**
+            *   **Constraint:** All file operations must be confined within a designated "WORKSPACE" directory for security.
+            *   **Required Actions:** `create_file`, `create_folder`, `view_folder_contents`, `read_file`, `write_file` (overwrite/append), `edit_file` (potentially complex edits), `save_file`, `delete_file`, `delete_folder`, `list_files_folders`, `move_file_folder`, `copy_file_folder`.
+            *   **Supported File Types (minimum):** Must handle common operations (read, write where applicable) for a wide range of text-based and common binary formats, including but not limited to: `.txt`, `.docx`, `.pdf` (reading text, potentially metadata), `.xlsx`, `.csv`, `.pptx`, `.zip`, `.rar`, `.7z`, `.bat`, `.sh`, `.html`, `.css`, `.js`, `.py`, `.java`, `.c`, `.cpp`, `.php`, `.sql`, `.xml`, `.json`, `.md`, `.doc`, `.xls`, `.ppt`, `.rtf`, `.ini`, `.cfg`, `.conf`, `.log`, `.bak`, `.dat`, `.db`, `.sqlite`, `.tsv`, `.env`, `.yaml`, `.yml`, `.rb`, `.go`, `.rs`, `.pl`, `.lua`, `.h`, `.cs`, `.r`. (Ensure broad compatibility and error handling for unsupported operations).
+        *   **Memory Access/Query Tool:**
+            *   Provides actions for the agent to explicitly query its own long-term memory systems.
+            *   **Required Actions:** `search_semantic_memory` (vector search), `query_structured_memory` (e.g., SQL-like query if applicable), `retrieve_past_interaction`, `store_information_longterm`.
+
+**6. Graphical User Interface (GUI) Requirements:**
+
+Develop a sleek, commercial-grade, aesthetically pleasing, and fully functional GUI with the following characteristics:
+
+*   **Single Window Design:** All panels, controls, and information must be contained and accessible within a *single main application window*. There should be no separate "pages" or distinct window views, maintaining a unified dashboard experience.
+*   **Aesthetic:** Futuristic, Synthwave/Cyberpunk theme.
+*   **Visuals:** Animated elements, dark background, neon colors (cyan, magenta, yellow, teal, blue) for text and highlights. Use green/red specifically for status indicators (good/bad, on/off).
+*   **Interactivity:** Buttons, switches, levers, etc., should appear 3D, animated, and feature illuminated colored lighting/underglow (neon).
+*   **Layout:** Single-window interface containing distinct, labeled panels. Panels should have visual depth (e.g., appear as truly 3D holographic projections with distinct borders/edges). Panels might be resizeable or dockable within the main window.
+*   **Required GUI Panels/Elements:**
+    *   **Title:** Prominent "AUTOAGI" title at the top center (use "AUTOAGI.png" if provided).
+    *   **Footer:** Smaller "PSYCHOSTUDIOS" text/logo at the bottom (use "PSYCHOSTUDIOS.png" if provided).
+    *   **AI PROVIDER & MODEL Panel:**
+        *   Selector (e.g., dropdown, radio buttons) for AI Provider (Gemini, Groq, Grok, OpenRouter, Ollama).
+        *   **Base URL Display/Editor:**
+            *   Displays the current Base URL associated with the selected provider (e.g., `https://api.google.com/`, `http://localhost:11434/`).
+            *   A **Lock/Unlock Icon** next to the Base URL field.
+                *   When locked (default state), the URL field is read-only.
+                *   Clicking the icon unlocks the field, making it editable.
+                *   Clicking the icon again locks the field, saving the potentially changed URL and making it read-only again. This prevents accidental changes.
+        *   **API Key Input:** Next to each provider (or potentially near the Base URL for providers like Ollama that might not use a key but need the URL), a "Key" icon/button. Clicking this opens a secure input field to enter and save the API key (if applicable for the provider).
+        *   **Model Refresh:** A "Refresh Models" button. When clicked, uses the saved API key (if applicable) and the current Base URL for the selected provider to fetch a list of available models.
+        *   **Model Selection:** A dropdown menu populated with the fetched models, allowing the user to select the active LLM "brain".
+        *   **Vision Capability Toggle:** A toggle switch/checkbox labeled "Vision Enabled": Allows the user to indicate whether the selected model has vision (image processing) capabilities. This setting should inform tools (like the Internet Browser Tool) whether they can utilize vision-based actions (e.g., analyzing screenshots) or should rely solely on text-based methods.
+    *   **REQUEST / CONTROL Panel:**
+        *   Multi-line text area for user to input requests.
+        *   A "SEND" push-button (illuminated green when active/ready) to submit the request for processing.
+        *   **An "Infinity Mode" toggle switch/button:** Allows the user to designate that the submitted request represents an ongoing task that should run continuously (e.g., managing a business, running a service, monitoring data) until manually stopped. This button should clearly indicate its on/off state (e.g., illuminated when active).
+        *   **A "STOP" push-button:** (Illuminated red when the agent is actively running, especially in Infinity Mode). Allows the user to halt the agent's current operation, including stopping tasks running in Infinity Mode.
+        *   (Optional Enhancement): Controls for interaction mode (e.g., fully autonomous vs. request user confirmation at steps).
+    *   **TOOLS Panel:**
+        *   Displays all available Tools.
+        *   Clearly categorizes/separates default Tools, autonomously created Tools, and potentially user-added/community Tools.
+        *   May include options to enable/disable specific tools.
+    *   **COGNITION / AGENT STATE Panel:**
+        *   Displays live, real-time agent state information:
+            *   `CURRENT GOAL / TASK`
+            *   `CURRENT SUBTASK / STEP`
+            *   `CURRENT ACTION / TOOL` (if applicable)
+            *   `AGENT STATUS` (e.g., Thinking, Planning, Executing, Waiting for User, Idle, **Running [Infinity Mode]**, Error)
+            *   `CURRENT THOUGHT / REASONING` (brief summary)
+            *   `NEXT PLANNED STEP` (if available)
+    *   **TERMINAL / LOG Panel:**
+        *   A comprehensive output window displaying:
+            *   LLM interactions (prompts/responses, function calls).
+            *   All program logs (standard output/error).
+            *   Tool input/output logs.
+            *   Augmentation activity logs.
+            *   Action input/output logs.
+            *   Memory operations (storing/retrieving).
+            *   Any errors or warnings.
+    *   **BROWSER Panel:**
+        *   A small preview window showing the live view of the integrated web browser when the Internet Browser Tool is active.
+        *   Functionality to "pop out" this preview into a larger, separate window.
+    *   **FILES Panel:**
+        *   A file explorer view restricted to the "WORKSPACE" directory.
+        *   Allows navigation through sub-folders and viewing/basic interaction with files within the workspace.
+    *   **EXECUTION ENVIRONMENTS Panel:**
+        *   Displays status for managed sandboxed execution environments:
+            *   Environment ID/Name
+            *   Status (Active, Inactive, Building, Error)
+            *   Language/Base Image (if applicable)
+            *   Creation Date / Last Used Date
+        *   User controls to `Create New Environment` (potentially specifying type) and `Destroy Environment`.
+    *   **STATUS Indicator Panel:**
+        *   Spans the bottom of the GUI.
+        *   Contains individual status indicator lights (e.g., green for OK, red for error, yellow for warning/busy) for major system components (Core LLM Connection, Memory Systems, each active Tool, Execution Environment Manager).
+        *   May include a display for API token usage (if applicable and trackable).
+    *   **USER FEEDBACK Panel:** A small area with a text entry box for the user to provide quick feedback or guidance while AutoAGI is running (e.g., correct an incorrect action or direction, provide clarification).
+
+**7. Implementation Language:**
+
+*   The specific programming language(s) and frameworks used to build AutoAGI are **not** predetermined. The AI system tasked with generating this program should analyze the requirements (performance, GUI, integrations, concurrency, sandboxing) and select the most suitable language(s) and technologies. However, it would be preferred if this program could be created with Python. 
+
+**8. Constraints and Important Notes:**
+
+*   **Cost:** The application's core functionality should strive to use free and open-source components where possible. Dependencies on paid external services (beyond the user-provided LLM API keys) should be avoided unless absolutely necessary and clearly documented.
+*   **API Keys:** The user is responsible for providing their own API keys for the selected LLM provider(s). The application must handle these keys securely (e.g., store encrypted locally). Base URLs must also be stored persistently per provider.
+*   **Tool Creation Constraint:** When AutoAGI creates new tools, it must ensure that the packages, systems & code utilized will *not* require additional API keys or paid subscriptions. It should favor local libraries, open-source packages, or direct protocol interactions. If a tool *must* use an external service, it should be clearly indicated, and ideally, support user-provided keys for that service.
+*   **Security:** Sandboxing for code execution and file system access (workspace confinement) is critical and must be implemented robustly, this can be done so via a python virtual environment but would prefer an Anaconda3 virtual environment for which AutoAGI executes code within. 
+
+---
